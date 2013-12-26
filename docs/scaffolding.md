@@ -4,7 +4,7 @@ Generazione Scaffold per "resource"
     
 Generazione Scaffold per "project"
 
-   php artisan generate:scaffold project --fields="name:string, customer:string, description:string, projectmanager:string, active:boolean:default(false)"
+    php artisan generate:scaffold project --fields="name:string, customer:string, description:string, projectmanager:string, active:boolean:default(false)"
    
 
 
