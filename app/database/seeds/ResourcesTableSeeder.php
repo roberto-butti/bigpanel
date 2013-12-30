@@ -20,7 +20,8 @@ class ResourcesTableSeeder extends Seeder {
           'email' => $value[2],
           "profile" => $value[3],
           "contract" => $value[4],
-          "active" => true
+          "active" => true,
+          "area" => "DEV"
         )
       );
     }

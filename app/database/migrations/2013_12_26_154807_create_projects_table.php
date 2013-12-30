@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateResourcesTable extends Migration {
+class CreateProjectsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,14 +12,12 @@ class CreateResourcesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('resources', function(Blueprint $table) {
+		Schema::create('projects', function(Blueprint $table) {
 			$table->increments('id');
-			$table->string('first_name');
-			$table->string('last_name');
-			$table->string('email')->unique();
-			$table->string('profile');
-			$table->string('contract');
-			$table->string('area');
+			$table->string('name');
+			$table->string('customer');
+			$table->string('description');
+			$table->string('projectmanager');
 			$table->boolean('active')->default(false);
 			$table->timestamps();
 		});
@@ -33,7 +31,7 @@ class CreateResourcesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('resources');
+		Schema::drop('projects');
 	}
 
 }

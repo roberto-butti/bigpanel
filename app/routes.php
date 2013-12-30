@@ -11,9 +11,13 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/', array('as' => 'index', 'uses' => 'HomeController@index'));
+Route::get('auth/logout', array('as' => 'auth.logout', 'uses' => 'AuthController@getLogout'));
+Route::get('auth/login', array('as' => 'auth.login', 'uses' => 'AuthController@getLogin'));
+Route::post('auth/login', array('as' => 'auth.login.post', 'uses' => 'AuthController@postLogin'));
 
-Route::resource('resources', 'ResourcesController');
+Route::group(array( 'before' => 'auth.admin'), function()
+{
+  Route::resource('resources', 'ResourcesController');
+  Route::resource('projects', 'ProjectsController');
+});
