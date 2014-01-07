@@ -21,3 +21,5 @@ Route::group(array( 'before' => 'auth.admin'), function()
   Route::resource('resources', 'ResourcesController');
   Route::resource('projects', 'ProjectsController');
 });
+
+Route::resource('allocations', 'AllocationsController');

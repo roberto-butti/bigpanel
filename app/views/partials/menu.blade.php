@@ -18,6 +18,7 @@
           <ul class="dropdown-menu">
             <li><a href="{{ URL::route('resources.index') }}">Persone</a></li>
             <li><a href="{{ URL::route('projects.index') }}">Progetti</a></li>
+            <li><a href="{{ URL::route('allocations.index') }}">Allocazioni</a></li>
             <li class="divider"></li>
             <li class="dropdown-header">Crea NUOVO</li>
             <li><a href="{{ URL::route('resources.create') }}">Nuova Persona</a></li>
