@@ -12,6 +12,7 @@ class ProjectsController extends BaseController {
 	public function __construct(Project $project)
 	{
 		$this->project = $project;
+		View::share('menu', true);
 	}
 
 	/**

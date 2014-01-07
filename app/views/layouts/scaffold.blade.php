@@ -1,28 +1,24 @@
 <!doctype html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
-		<style>
-			table form { margin-bottom: 0; }
-			form ul { margin-left: 0; list-style: none; }
-			.error { color: red; font-style: italic; }
-			body { padding-top: 20px; }
-		</style>
-	</head>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Big Panel</title>
+  @include('partials.assets')
+</head>
+<body>
+	@if ( isset($menu) ? $menu : false )
+  @include('partials.menu')
+  @endif
 
-	<body>
+  @if (Session::has('message'))
+    <div class="flash alert">
+      <p>{{ Session::get('message') }}</p>
+    </div>
+  @endif
 
-		<div class="container">
-			@if (Session::has('message'))
-				<div class="flash alert">
-					<p>{{ Session::get('message') }}</p>
-				</div>
-			@endif
-
-			@yield('main')
-		</div>
-
-	</body>
-
+  <div class="container">
+    @yield('main')
+  </div>
+  @include('partials.js-end')
+</body>
 </html>

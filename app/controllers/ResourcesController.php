@@ -12,6 +12,7 @@ class ResourcesController extends BaseController {
 	public function __construct(Resource $resource)
 	{
 		$this->resource = $resource;
+		View::share('menu', true);
 	}
 
 	/**
